@@ -3,12 +3,17 @@
 ## Project Overview
 This project builds a robust recommendation system designed to suggest online courses to users based on their interactions, preferences, and course attributes. The core objective is to enhance the user learning experience by providing personalized course recommendations, which in turn can increase user engagement and course completion rates.
 
+## 🎥 Working Demo Trailer
+Here is a demonstration of the interactive Streamlit application built for this course recommendation system:
+
+![Working Demo Trailer](demo_trailer.webp)
+
 ## Detailed Explanation
-The project is encapsulated within a Jupyter Notebook (`Recommendation_System_P2_V3_0 (3).ipynb`) and generally follows these key phases:
+The project includes both a Jupyter Notebook (`Recommendation_System_P2_V3_0 (3).ipynb`) and an interactive Streamlit Web App (`app.py`), following these key phases:
 
 1. **Exploratory Data Analysis (EDA)**: 
    - We import libraries like Pandas, NumPy, Matplotlib, and Seaborn.
-   - We load the `online_course_recommendation.xlsx` dataset and analyze its shape and structure.
+   - We load the dataset and analyze its shape and structure.
    - We explore the distribution of user ratings, course enrollments, and other interaction metrics to identify trends and outliers.
 
 2. **Data Preprocessing**:
@@ -18,27 +23,30 @@ The project is encapsulated within a Jupyter Notebook (`Recommendation_System_P2
    - Creating a data pipeline to automate the transformation process.
 
 3. **Recommendation Engine Building**:
-   - Depending on the approach, the system might employ Collaborative Filtering (recommending courses based on similar users' preferences) or Content-Based Filtering (recommending courses similar to those the user has taken in the past).
+   - Multiple recommendation techniques implemented: Popularity-Based, Rule-Based, Content/Metadata-Based, Semantic (TF-IDF + SVD), and Collaborative Filtering (User-User, Item-Item, Matrix Factorization).
    - Building a user-item interaction matrix.
 
-4. **Model Evaluation**:
-   - Testing the recommendation system on unseen data.
-   - Generating a list of top-N recommended courses for specific users to validate the model's accuracy and relevance.
+4. **Model Evaluation & Web Deployment**:
+   - Evaluated models using RMSE and MAE.
+   - Built a Streamlit web application (`app.py`) allowing users to filter by difficulty level and ratings to receive real-time course recommendations and explore the underlying data.
 
 ## Project Structure
-- `Recommendation_System_P2_V3_0 (3).ipynb`: The main Jupyter notebook containing all the code for EDA, preprocessing, and the recommendation algorithms.
-- `Online Course Recommendation System..1.pptx`: A presentation file summarizing the project's goals, methodology, and results.
-- `online_course_recommendation.xlsx`: The raw dataset used for analysis (Note: this file is ignored in version control due to its size).
+- `app.py`: Streamlit web interface for real-time course recommendations and exploration.
+- `demo_trailer.webp`: Recorded demonstration video trailer showing the working web application.
+- `Recommendation_System_P2_V3_0 (3).ipynb`: The comprehensive Jupyter notebook containing all code for EDA, preprocessing, models, and evaluations.
+- `Online Course Recommendation System..1.pptx`: Presentation summarizing the project's goals, methodology, and results.
 
 ## Getting Started
-To explore this project locally:
-1. Clone the repository.
-2. Install the necessary Python libraries:
-   ```bash
-   pip install pandas numpy scikit-learn matplotlib seaborn jupyter
-   ```
-3. Launch Jupyter Notebook and open `Recommendation_System_P2_V3_0 (3).ipynb`.
-   ```bash
-   jupyter notebook
-   ```
-4. Run the cells sequentially to observe the data analysis and recommendation generation process.
+
+### 1. Run the Web Application
+```bash
+pip install streamlit pandas numpy openpyxl
+streamlit run app.py
+```
+
+### 2. Explore the Notebook
+```bash
+pip install pandas numpy scikit-learn matplotlib seaborn jupyter
+jupyter notebook
+```
+Open and run `Recommendation_System_P2_V3_0 (3).ipynb` sequentially.
